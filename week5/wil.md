@@ -24,13 +24,16 @@ views.py에서, models에 만들어둔 클래스를 import하고, 변수에 [클
 조건에 맞는 정보들을 객체로 만들어 **리스트**에 넣어 반환한다. get()과의 차이점은 여러 개의 객체가 리스트로 반환된다는 점이다.
 
 예시:
+
     question = Question.objects.filter(id = question_id)
 
 ### objects.get()
 조건에 맞는 데이터를 객체로 만들어 반환한다.
 
 예시:
+
     question = Question.objects.get(id = question_id)
+
 위 예시는 id값이 question_id인 데이터를 객체로 만들어 반환하는 메서드이다. 위의 filter()와의 차이점은 하나의 객체가 그대로 반환된다는 점이다.
 
 ## 동적 html 생성
@@ -50,19 +53,22 @@ views.py의 render함수에서, html 경로 뒤에는 **dictionary** 타입의 �
 ### h1, h2, h3
 제목을 생성해주는 태그, 숫자가 커질수록 글자 크기가 작아진다.
 
-예:
+예시:
+
     <h1>Hello World</h1>
 
 ### p
 paragraph, 한 단락을 생성해주는 태그. 해당 태그의 위아래로 빈 줄이 생긴다.
 
-예:
+예시:
+
     <p>Hi</p>
 
 ### a
 하이퍼링크를 걸어주는 태그로, href 속성 안에 지정된 링크로 하이퍼링크가 연결된다.
 
-예:
+예시:
+
     <a href='www.google.com'>구글 접속</a>
 "구글 접속"이라는 글자가 파란 색으로 하이라이트되며, 해당 글자 클릭 시 지정된 링크로 이동한다.
 
@@ -72,6 +78,7 @@ paragraph, 한 단락을 생성해주는 태그. 해당 태그의 위아래로 �
 **ol(ordered list)**는 순서가 있는 리스트이고, **ul(unordered list)**는 순서가 없는 리스트이다.
 
 예시:
+
     <ul>
         <li>이혁</li>
         <li>김성훈</li>
@@ -89,7 +96,8 @@ paragraph, 한 단락을 생성해주는 태그. 해당 태그의 위아래로 �
 ### form, input
 form 태그를 통해 action 속성의 url을 목적지로 하여, form 태그 안 input 태그에서 입력받은 데이터를 전송한다.
 
-예:
+예시:
+
     <form action="localhost:8000/create">
         <input type="text"/>
         <input type="submit"/>
